@@ -1,4 +1,11 @@
-from variables import *
+# indendation
+# Ctrl+Shift+Alt+L
+#interpreter
+# a = "10"   --> machine understandable (bytecode) --> machine
+# b = 20
+# c = 30
 
-print("empname : ",empname)
-print("_emppassword : ",_emppassword)
+age = 26
+print(type(age))
+age = "kasi"
+print(type(age))
