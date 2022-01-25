@@ -30,12 +30,13 @@ class A:
 # obj1.java()
 
 class B:
-    def __init__(self):
-        print("object is created")
-    def python(self):
+    # def __init__(self):
+    #     print("object is created")
+    def python(self):   #if there is a self in method u must call with obj ref
         print("Python")
 obj1=B()
-obj1.python()
+#obj1.python()
+B.python(obj1)
 
 # create
 
@@ -68,11 +69,11 @@ class B:
        print("add",self.a+self.b)
     def mul(self):
         print("mul",self.a*self.b)
-
-obj1=B(10,20)
-obj1.add()
-obj1.mul()
-
+#
+# obj1=B(10,20)
+# obj1.add()
+# obj1.mul()
+# B.mul(obj1)
 
 # create a class  which is having one init method and two objsts
 
