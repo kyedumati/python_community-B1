@@ -246,11 +246,10 @@ class P:
     def __init__(self):
         print('Parent Constructor')
 class C(P):
-    pass
-           #calling parent class constr
+    def __init__(self):
+        print('Child Constructor')
+        super().__init__()       #calling parent class constr
 c=C()
-
-
 
 
 
