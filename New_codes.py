@@ -18,5 +18,20 @@ x='abcd$$e$gh'
 y=strrev(x)
 print(y)
 
+input = "ab$c$de$gh"
+output=[]
+index=-1
+input = list(input)
+print("",input)
+for i in range(len(input)-1,int(len(input)/2),-1):
+    if input[i]!="$":
+        temp=input[i]
+        while True:
+            index+=1
+            if input[index]!="$":
+                input[i] = input[index]
+                input[index] = temp
+                break
 
+print(input)
 
