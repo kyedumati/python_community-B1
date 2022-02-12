@@ -2,8 +2,8 @@ import mysql.connector
 try:
     con=mysql.connector.connect(host='localhost',database='python_db',user='root',password='root',port=3306)
     cursor=con.cursor()
-    # cursor.execute("create table employees(eno int(5) primary key,ename varchar(10),esal double(10,2),eaddr varchar(10))")
-    # print("Table Created...")
+    cursor.execute("create table employees(eno int(5) primary key,ename varchar(10),esal double(10,2),eaddr varchar(10))")
+    print("Table Created...")
 
     sql = "insert into employees(eno, ename, esal, eaddr) VALUES(%s, %s, %s, %s)"
     records=[(101,'Yuvraj',1000,'Mumbai'),
