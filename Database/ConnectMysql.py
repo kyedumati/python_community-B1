@@ -1,6 +1,6 @@
 import mysql.connector
 try:
-    con=mysql.connector.connect(host='localhost',database='python_db',user='root',password='root',port=3306)
+    con=mysql.connector.connect(host='localhost',database='python_community2',user='root',password='root',port=3306)
     cursor=con.cursor()
     cursor.execute("create table employees(eno int(5) primary key,ename varchar(10),esal double(10,2),eaddr varchar(10))")
     print("Table Created...")
@@ -24,6 +24,7 @@ try:
          print()
          print()
 except mysql.connector.DatabaseError as e:
+#except Exception as e:
      if con:
         con.rollback()
      print("There is a problem with sql :",e)
@@ -32,3 +33,7 @@ finally:
         cursor.close()
      if con:
         con.close()
+
+
+print("tests")
+
