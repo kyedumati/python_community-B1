@@ -10,6 +10,7 @@ try:
      (201,'Harbhajan',2000,'Ranchi'),
      (301,'Rohit',3000,'Delhi')]
     cursor.executemany(sql,records)
+    print("adding this line to test github")
     con.commit()
     print("Records Inserted Successfully...")
 
