@@ -1,11 +1,14 @@
 import mysql.connector
+from DBConnection import *
+
 try:
-    con=mysql.connector.connect(host='localhost',database='python_community2',user='root',password='root',port=3306)
+    #con=mysql.connector.connect(host='localhost',database='python_community3',user='root',password='root',port=3306)
+    con=get_db_connection()
     cursor=con.cursor()
-    cursor.execute("create table employees(eno int(5) primary key,ename varchar(10),esal double(10,2),eaddr varchar(10))")
+    cursor.execute("create table employees_test(eno int(5) primary key,ename varchar(10),esal double(10,2),eaddr varchar(10))")
     print("Table Created...")
 
-    sql = "insert into employees(eno, ename, esal, eaddr) VALUES(%s, %s, %s, %s)"
+    sql = "insert into employees_test(eno, ename, esal, eaddr) VALUES(%s, %s, %s, %s)"
     records=[(101,'Yuvraj',1000,'Mumbai'),
      (201,'Harbhajan',2000,'Ranchi'),
      (301,'Rohit',3000,'Delhi')]
@@ -14,7 +17,7 @@ try:
     con.commit()
     print("Records Inserted Successfully...")
 
-    cursor.execute("select * from employees")
+    cursor.execute("select * from employees_test")
     data=cursor.fetchall()
     print("data from db ",data)
     for row in data:
@@ -37,4 +40,12 @@ finally:
 
 
 print("tests")
+
+
+
+#Tasks on Database programming
+# 1.Create a common function to get database connection
+# 2.Create a program to create customers table with all fields from python code and insert 4 records
+# 3.Select all the records from customers table
+# 4.Update customer pincode for all the customers whose address is ongole
 
