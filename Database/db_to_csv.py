@@ -21,6 +21,8 @@ try:
         csv_writer = csv.writer(csv_file)
         csv_writer.writerow([i[0] for i in cursor.description])  # write headers
         csv_writer.writerows(data)
+
+
     # for row in data:
     #      print("Employee Number:",row[0])
     #      print("Employee Name:",row[1])
