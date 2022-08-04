@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <!--  <link rel="stylesheet" href="\static\css\test.css"> -->
+    <link rel="stylesheet" href="{% static 'css/test.css' %}">
+</head>
+<body>
+<h1>Hello Everyone, you are in showtime page!!!</h1>
+<h1>Current date and time is: {{current_time}}</h1>
+<img src="{% static 'images/yuvraj.jpg' %}" width="50%" height="40%">
+<ul>
+    <li>Student Name : {{name}}</li>
+    <li>Student Rollno : {{rollno}}</li>
+    <li>Student Marks : {{marks}}</li>
+</ul>
+<!--<table border="1" >
+    <tr><td>Name</td><td>Address</td><td>Phone</td></tr>
+    <tr><td>Kasi</td><td>Ongole</td><td>6302193992</td></tr>
+</table>-->
+
+</body>
+</html>
+
+<!--
+Jinja tags are those to use python variables in to html    {{varname}}
+-->

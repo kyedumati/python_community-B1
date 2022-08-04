@@ -1,0 +1,20 @@
+body{
+		  background-color:pink;
+		  color:green;
+		  /*font-size:30px;*/
+		}
+		/*h1{
+		   color:blue;
+		}*/
+		
+		.first_h1{
+		  color:blue;
+		}
+		/*.second_h1{
+			color:red;
+		}
+		*/
+		#fourth_h1,.second_h1{
+		  color:yellow;
+		}
+		
