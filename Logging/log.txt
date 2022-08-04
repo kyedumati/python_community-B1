@@ -1,0 +1,3 @@
+11/02/202207:47:11 AM:WARNING:warning Information
+11/02/202207:47:11 AM:ERROR:error Information
+11/02/202207:47:11 AM:CRITICAL:critical Information

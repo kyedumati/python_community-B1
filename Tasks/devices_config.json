@@ -1,0 +1,5 @@
+[
+  {"address": "127.0.0.0","name": "local device1","location": "hyderabad"},
+  {"address": "127.0.0.1","name": "local device2","location": "banglore"},
+  {"address": "127.0.0.2","name": "local device3","location": "hyderabad"}
+]

@@ -1,0 +1,17 @@
+WARNING:root:warning Information
+ERROR:root:error Information
+CRITICAL:root:critical Information
+WARNING:root:warning Information
+ERROR:root:error Information
+CRITICAL:root:critical Information
+WARNING:root:warning Information
+ERROR:root:error Information
+CRITICAL:root:critical Information
+ERROR:root:division by zero
+Traceback (most recent call last):
+  File "C:/Kasi/Workspace/python_community-B1/PythonLogging.py", line 21, in <module>
+    print('The Result:', x / y)
+ZeroDivisionError: division by zero
+WARNING:root:warning Information
+ERROR:root:error Information
+CRITICAL:root:critical Information
