@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+APPEND_SLASH=False
 
 # Application definition
 
@@ -77,8 +78,15 @@ WSGI_APPLICATION = 'EmployeeRESTAPI.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #PORT,USERNAME,PASSWORD,NAME,HOST
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'python_community3',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'PORT': 3306,
+        'HOSTNAME': '127.0.0.1'
     }
 }
 
