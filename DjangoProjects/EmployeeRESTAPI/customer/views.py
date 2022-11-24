@@ -34,11 +34,14 @@ from rest_framework import status
 class StudentApiView(APIView):
     #get all the student info
     def get(self,request,*args,**kwargs):
-        student_data=Student.objects.all()
+        student_data=Student.objects.all()   # select * from customer_student;
         serializer=StudentSerializer(student_data,many=True)
         return Response(serializer.data,status=status.HTTP_200_OK)
     #Create
     def post(self,request,*args,**kwargs):
+        first_name = request.data.get('first_name')
+        if (len(first_name) < 8):
+            return Response({"rest": "First name should be more than 8 character"}, status=status.HTTP_400_BAD_REQUEST)
         data ={
             "first_name": request.data.get('first_name'),
             "last_name": request.data.get('last_name'),
@@ -46,7 +49,7 @@ class StudentApiView(APIView):
         }
         serializer=StudentSerializer(data=data)
         if serializer.is_valid():
-            serializer.save()
+            serializer.save()    # insert into customer_student values('','','')
             return Response(serializer.data,status=status.HTTP_201_CREATED)
         return Response(serializer.data,status=status.HTTP_400_BAD_REQUEST)
 
@@ -54,11 +57,15 @@ class StudentApiView(APIView):
     def put(self, request,student_id, *args, **kwargs):
         student_instance=None
         try:
-            student_instance = Student.objects.get(id=student_id)
+            student_instance = Student.objects.get(id=student_id)  # select * from customer_student where id=1
         except Student.DoesNotExist:
             pass
         if not student_instance:
             return Response({"rest":"No student matching with given id"},status=status.HTTP_400_BAD_REQUEST)
+        first_name = request.data.get('first_name')
+
+        if(len(first_name)<8):
+            return Response({"rest": "First name should be more than 8 character"}, status=status.HTTP_400_BAD_REQUEST)
 
         data = {
             "first_name": request.data.get('first_name'),
@@ -68,7 +75,7 @@ class StudentApiView(APIView):
 
         serializer = StudentSerializer(instance=student_instance,data=data,partial=True)
         if serializer.is_valid():
-            serializer.save()
+            serializer.save()  # update custom_student set first_name='',last_name='' where id=1
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

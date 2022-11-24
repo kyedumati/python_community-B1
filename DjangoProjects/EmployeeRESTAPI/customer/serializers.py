@@ -5,3 +5,9 @@ class StudentSerializer(serializers.ModelSerializer):
       class Meta:
           model=Student
           fields=["first_name","last_name","email_id"]
+
+
+class EmployeeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Student
+        fields = ["ename", "empno", "email_id"]
